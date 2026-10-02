@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ENVY Games</title>
+<meta name="description" content="ENVY Games is an independent game studio. Our first game, Voxel Voyage, is a music runner for Android.">
+<link rel="icon" href="voxel-voyage/icon.png">
+<style>
+  :root { --ink: #2b2433; --soft: #6a6273; --bg: #faf8fc; --card: #ffffff; --rule: #e6e0ec; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #eee9f3; --soft: #b8b0c2; --bg: #17141b; --card: #221e28; --rule: #2e2836; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 680px; margin: 0 auto; padding: 56px 16px 64px; }
+  h1 { font-size: 40px; line-height: 1.1; margin: 0; letter-spacing: 0.02em; }
+  .tag { color: var(--soft); margin: 6px 0 40px; }
+  .bar { height: 6px; border-radius: 3px; margin: 18px 0 0; width: 168px;
+         background: linear-gradient(90deg, #f27aa0, #f5a46b, #f2d16b, #9fdc8a, #6cc9d6, #7d9cf0, #b48af0); }
+  .game { display: flex; gap: 20px; align-items: center; background: var(--card); border: 1px solid var(--rule);
+          border-radius: 20px; padding: 20px; }
+  .game img { width: 96px; height: 96px; border-radius: 22px; flex: none; }
+  .game h2 { font-size: 22px; margin: 0 0 4px; }
+  .game p { margin: 0; color: var(--soft); }
+  .links { margin: 10px 0 0; font-size: 15px; }
+  a { color: inherit; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--soft); font-size: 15px; }
+  @media (max-width: 420px) { .game { flex-direction: column; align-items: flex-start; } h1 { font-size: 34px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>ENVY Games</h1>
+  <div class="bar" aria-hidden="true"></div>
+  <p class="tag">An independent game studio.</p>
+
+  <section class="game">
+    <img src="voxel-voyage/icon.png" alt="Voxel Voyage icon">
+    <div>
+      <h2>Voxel Voyage</h2>
+      <p>A music runner for Android: one cube, ten worlds, and a track that moves with the song. Coming soon to Google Play.</p>
+      <p class="links"><a href="voxel-voyage/privacy.html">Privacy policy</a></p>
+    </div>
+  </section>
+
+  <footer>Contact: <a href="mailto:envyagamestudio@gmail.com">envyagamestudio@gmail.com</a></footer>
+</main>
+</body>
+</html>
