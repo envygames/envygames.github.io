@@ -19,12 +19,13 @@
 <body>
 <main>
 <h1>Voxel Voyage privacy policy</h1>
-<p class="meta">ENVY Games &middot; last updated 18 October 2026</p>
+<p class="meta">ENVY Games &middot; last updated 29 October 2026</p>
 
 <p>Voxel Voyage is a game for Android made by ENVY Games, the independent studio of Neil Dsouza ("we", "us"). This page
-explains what information the game and the services it uses handle, and why. In short: we don't run any servers and we
-don't collect your personal information ourselves. The game uses Google's services for ads and purchases, and Unity's for
-the daily board (players 13 and over), and those services handle some information as described below.</p>
+explains what information the game and the services it uses handle, and why. In short: we don't run servers of our own
+and we don't collect your personal information ourselves. The game uses Google's services for ads, purchases and
+sign-in, and Unity's for the daily board and the cloud save (players 13 and over), and those services handle some
+information as described below.</p>
 
 <h2>What the game keeps on your phone</h2>
 <ul>
@@ -54,9 +55,18 @@ sites or apps that use its services</a>.</p>
 
 <h2>Purchases (Google Play)</h2>
 <p>Purchases (No Ads, the starter pack, animated cubes) are made through Google Play. We never see your payment details. Google Play tells
-the game what you bought so it can give it to you, and so No Ads can be restored on a new phone. The game talks to
+the game what you bought so it can give it to you, and so it can be restored on a new phone. The game talks to
 Google Play through Unity's purchasing library (Unity In-App Purchasing); we have switched off that library's own
 purchase reports to Unity, so your purchases are between you and Google Play.</p>
+<p>For players 13 and over, the game also sends the purchase's code from Google Play (the purchase token) and the
+item's name to a check on Unity's servers, which asks Google Play whether the purchase is real before the game keeps
+it. It remembers a scrambled copy of the code (a hash) next to a scrambled copy of your player ID, so the same purchase
+can't be used by another player. This is to stop fake purchases. Neither the code nor your ID is stored as it is. This
+record is kept after you delete your data, so a refunded or shared purchase can't be used again; only our server can
+read it, and once your player is deleted it no longer leads to an account. Nothing about your payment is sent. Players
+under 13 are checked on the phone only.</p>
+<p>When the game opens, it asks Google Play which purchases are yours. An item whose purchase Google Play no longer
+lists (because it was refunded or reversed) is removed from the game.</p>
 
 <h2>Rating the game (Google Play)</h2>
 <p>Now and then, after a good run, the game may show Google Play's own rating card (at most three times, and never to
@@ -73,10 +83,19 @@ runs on Unity Gaming Services (Unity Authentication and Unity Leaderboards):</p>
   <li>Once you have run the daily track, the game signs in to Unity as a guest, with no account, email or password. Unity
       gives the phone a random player ID and a random name made of words (for example "Solid Slicing Boar"). You never type a
       name, and other players see only that random name.</li>
-  <li>The game sends Unity that player ID and your daily run distances. Like any online service, Unity also receives
+  <li>The game sends Unity that player ID and your daily runs: the distance, how long the run took and its close
+      calls, which a check on Unity's servers uses to turn away scores no real run could make. Like any online
+      service, Unity also receives
       your IP address, from which it may work out a rough location, and basic device information, to run the service
       and keep it secure. Unity handles this as described in
       <a href="https://unity.com/legal/privacy-policy">Unity's privacy policy</a>.</li>
+  <li>With each new best of the day, the game asks Google Play for a token (Google's Play Integrity service) that says
+      whether this is the real game from Google Play on a genuine Android phone, and sends it with the score. Our check
+      has Google read the token and keeps only the answer, yes or no, for that score; no ID of your phone reaches us.
+      Google Play makes the token from the game's version and signature, its Google Play licence and a check of the
+      phone by Google Play services, under
+      <a href="https://policies.google.com/privacy">Google's privacy policy</a>. It keeps the board fair: scores
+      from changed copies of the game are turned away.</li>
   <li>Players under 13 (by the year of birth asked at the start) never sign in: no player ID is made and nothing is
       sent.</li>
   <li>Without a connection the board just isn't shown, and the rest of the game works as before.</li>
@@ -85,7 +104,30 @@ runs on Unity Gaming Services (Unity Authentication and Unity Leaderboards):</p>
 your Unity player ID at once, and the game sends nothing more until you choose JOIN THE BOARD. Its name and scores
 stay on that day's board until the board resets, and are erased then, within 3 days (boards are not archived). If you
 no longer have the game, email <b>envyagamestudio@gmail.com</b> from any address with the words "delete my board
-data" and the date and distance of a daily run you remember; we'll delete it within 30 days.</p>
+data" and the date and distance of a daily run you remember; we'll delete it within 30 days. If you are signed in with
+Google (below), LEAVE THE BOARD keeps your player, which holds your cloud save: the game sends nothing more, and your
+name and scores are erased with the board's reset, within 3 days. DELETE MY DATA deletes the player too.</p>
+
+<h2 id="cloud">Google sign-in and cloud save</h2>
+<p>Players aged 13 and over can keep their progress safe and bring it to a new phone:</p>
+<ul>
+  <li>When the game opens, Google Play Games may sign you in by itself, as it does for other games, if you use it. If
+      you'd rather not, say no to Google once, and the game won't ask again (Settings &rarr; SIGN IN, if you change
+      your mind). Google handles your sign-in as described in
+      <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
+  <li>Signing in links the game's Unity player (the one the daily board uses) to your Play Games account. Your Play Games
+      name is shown in Settings only; the game doesn't send it anywhere.</li>
+  <li>Your progress and settings (worlds, best distance, cubes and extras, shards, streak, settings) are saved to Unity
+      Cloud Save after each run, so they come back on another phone. The game also keeps earlier copies for 30 days,
+      so a choice can be undone (Settings &rarr; MANAGE &rarr; EARLIER SAVES). Your purchases are never in it: they
+      come back from Google Play. Nor is the year you were born.</li>
+  <li>Players under 13 are never signed in, and nothing about them is sent.</li>
+</ul>
+<p id="delete-cloud"><b>Stopping or deleting it:</b> Settings &rarr; MANAGE &rarr; CLOUD SAVE off stops saving. DELETE MY
+DATA there deletes your cloud save, its earlier copies and your Unity player at once (your board name and scores go with
+the board's reset, within 3 days);
+your progress on the phone stays. If you no longer have the game, email <b>envyagamestudio@gmail.com</b> with the words
+"delete my cloud save" from the email of your Google account; we'll delete it within 30 days.</p>
 
 <h2>Reminders (optional)</h2>
 <p>If you allow notifications, the game sets at most one reminder a day on your phone (for example, when new daily
@@ -95,8 +137,8 @@ Android's settings for the app.</p>
 <h2>Children</h2>
 <p>Voxel Voyage is for everyone. The game asks the year you were born once (a neutral question, with no answer that
 "unlocks" anything). For players under 13, ads are child-directed: only from Google's Families-certified ad network,
-never personalised, and limited to content suitable for all ages. Players under 13 are kept off the daily board, and
-the game sends nothing about them to Unity.
+never personalised, and limited to content suitable for all ages. Players under 13 are kept off the daily board, are
+never signed in with Google, and the game sends nothing about them to Unity.
 The game has no chat, no profiles and no way to share personal information with other players: names on the daily
 board are random words, never typed in. Sharing a run's picture or a daily run result uses your phone's own share
 menu, and only sends what you choose to send.</p>
@@ -107,6 +149,7 @@ menu, and only sends what you choose to send.</p>
   <li>Stop all ads between runs: the one-time No Ads purchase.</li>
   <li>Delete the game's data: uninstall the game, or clear its storage in Android's app settings.</li>
   <li>Leave the daily board and delete your board data: see <a href="#delete">Deleting your board data</a>.</li>
+  <li>Stop the cloud save or delete it: see <a href="#delete-cloud">Stopping or deleting it</a>.</li>
 </ul>
 
 <h2>Changes and contact</h2>
@@ -115,6 +158,8 @@ menu, and only sends what you choose to send.</p>
 <p>If you write to us (Settings &rarr; Feedback opens an email for you), we see what you send, including the game's
 version and your phone's model and Android version, which the game adds to the email so we can look into problems.
 We use it only to answer you and fix the game.</p>
+<p>The rules for playing are in the <a href="terms.html">terms</a>, and the software the game is built with is listed in
+the <a href="licences.html">licences</a>.</p>
 </main>
 </body>
 </html>
